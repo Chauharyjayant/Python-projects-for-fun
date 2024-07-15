@@ -20,7 +20,8 @@ while cam.isOpened():
             continue
         x,y,w,h = cv2.boundingRect(c)
         cv2.rectangle(frame1,(x,y),(x+w , y+h),(0,0,255),2) #there will be a rectangle of red color will be shown with the 2px thickness
-        winsound.Beep(500, 200)
+        #winsound.Beep(500, 200) #Now this statement could've used to create a beep sound but we have a custom sound downloaded from some website
+        winsound.PlaySound('Alert.wav',winsound.SND_ASYNC)
     if cv2.waitKey(10) == ord("r"):
         break                       #Now this condition will wait for the user to  pressing r so that the break statement will get executed and cam stop'''
     cv2.imshow("Jayant's cam",frame1)#This statement shows the message that will be conveyed on the top left when the cam will be open'''
